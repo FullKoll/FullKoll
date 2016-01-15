@@ -5,7 +5,7 @@
 (function () {
   angular
     .module('app')
-    .controller('LoginController', MainController);
+    .controller('loginController', MainController);
     
   /**
    * The MainController code.
