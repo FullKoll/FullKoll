@@ -13,4 +13,7 @@ app.controller('fullkollCtrl', function ($scope) {
   for (var i=0; i<4; i++) {
     $scope.addSlide();
   }
+  
+  var minModel = $scope.mindModel1;
+  
 });

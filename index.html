@@ -8,6 +8,17 @@
 	<body>
 	<div ng-controller="fullkollCtrl">
 		
+    
+    <input type="checkbox" ng-model="checkbox" />
+    
+    <input type="number" ng-model="minModel1" />
+    <input type="number" ng-model="minModel2" />
+    
+    
+    
+    <div ng-if="checkbox">{{ minModel1 + minModel2 }}</div>
+    
+    
 		<div style="height: 305px">
     <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
       <uib-slide ng-repeat="slide in slides" active="slide.active">
