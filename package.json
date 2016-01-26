@@ -1,24 +1,11 @@
 {
-  "name": "FullKoll",
+  "name": "O365-Angular-Unified-API-Connect",
   "version": "1.0.0",
-  "description": "FullKoll",
+  "license": "MIT",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.13.3"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "test_command",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FullKoll/FullKoll.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FullKoll/FullKoll/issues"
-  },
-  "homepage": "https://github.com/FullKoll/FullKoll"
+    "express": "^4.12.3",
+    "morgan": "^1.5.2",
+    "path": "^0.11.14"
+  }
 }
