@@ -1,0 +1,15 @@
+<div>
+
+	calendar
+	<div ng-hide="calendar.isConnected">
+	<button class="ms-Button" ng-click="calendar.connect()">
+		<span class="ms-Button-label">Connect to Office 365</span>
+	</button>
+	</div>
+	<div ng-show="calendar.isConnected">
+		<button class="ms-Button" ng-click="calendar.getEvents()">
+			<span class="ms-Button-label">Get events</span>
+		</button>
+	</div>
+
+</div>

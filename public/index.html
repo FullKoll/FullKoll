@@ -1,0 +1,73 @@
+<html ng-app='fullKollApp'>
+
+<head>
+    <!-- AngularJs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- ADAL JS files. -->
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.7/js/adal.min.js"></script>
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.7/js/adal-angular.min.js"></script>
+
+
+    <!-- Saker -->
+    <script src="scripts/config.js"></script>
+</head>
+
+<body>
+    <div ng-controller="fullkollCtrl">
+
+
+        <input type="checkbox" ng-model="checkbox" />
+
+        <input type="number" ng-model="minModel1" />
+        <input type="number" ng-model="minModel2" />
+
+        <div ng-if="checkbox">{{ minModel1 + minModel2 }}</div>
+
+        <div style="height: 305px">
+            <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                <uib-slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                        <p>{{slide.text}}</p>
+                    </div>
+                </uib-slide>
+            </uib-carousel>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="noWrapSlides"> Disable Slide Looping
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                Interval, in milliseconds:
+                <input type="number" class="form-control" ng-model="myInterval">
+                <br />Enter a negative number or 0 to stop the interval.
+            </div>
+        </div>
+    </div>
+    <div ng-controller="adminCtrl">
+        <button ng-click="$scope.connect()">
+            Connect
+        </button>
+
+    </div>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/fullkollCtrl.js"></script>
+    <script src="app/controllers/adminCtrl.js"></script>
+</body>
+
+</html>
